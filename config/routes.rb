@@ -1,7 +1,34 @@
 Mova::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
+  #resources :users
+  resources :users  #, :only => [:show, :index]
 
-  #match "/signout" => "devise#sign_out"
+  devise_scope :user do
+   match "/login" => "devise/sessions#new"
+   match "/register" => "devise/registrations#new"
+  match  "/logout"  => "devise/sessions#destroy"
+   # match "/profile" => "devise/registrations#edit"
+  end
+
+  devise_for :users, :skip => [:registrations, :sessions]
+    # devise/registrations
+
+    #get 'signup' => 'devise/registrations#new', :as => :new_user_registration
+    #post 'signup' => 'devise/registrations#create', :as => :user_registration
+    #get 'users/cancel' => 'devise/registrations#cancel', :as => :cancel_user_registration
+    #get 'users/edit' => 'devise/registrations#edit', :as => :edit_user_registration
+    #put 'users' => 'devise/registrations#update'
+    #delete 'users/cancel' => 'devise/registrations#destroy'
+
+    # devise/sessions
+    #get 'signin' => 'devise/sessions#new', :as => :new_user_session
+   # post 'signin' => 'devise/sessions#create', :as => :user_session
+    #get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+
+
+
+
+
   #match "/signup" => "devise/registrations#new"
 
   # The priority is based upon order of creation:

@@ -13,6 +13,7 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag :application %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -44,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Mova</a>
+          <a class="brand" href="#">MOVA</a>
 
           <div class="container nav-collapse">
             <ul class="nav">
@@ -53,14 +54,14 @@
               <li><%= link_to "Link2", "/path2"  %></li>
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to "Logout", '/users/sign_out'  %>
+                  <%= link_to "Logout ", '/logout'   %>
                 </li>
               <% else %>
                   <li>
                     <%= link_to 'Login ', new_user_session_path %>
                   </li>
                   <li>
-                    <%= link_to 'Sign up ', new_user_registration_path %>
+                    <%= link_to 'Register', new_user_registration_path %>
                   </li>
               <% end %>
             </ul>
@@ -71,7 +72,6 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-          <p>Some text here</p>
         </div>
       </div>
     </div>
@@ -81,6 +81,7 @@
           <div class="span9">
             <%= bootstrap_flash %>
             <%= yield %>
+
           </div>
           <div class="span3">
             <div class="well sidebar-nav">
@@ -96,6 +97,7 @@
         </div><!--/row-->
 
       <footer>
+
         <p>&copy; Herebemagic.com 2013</p>
       </footer>
 

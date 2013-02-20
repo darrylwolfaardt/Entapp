@@ -23,6 +23,8 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'cancan'
+gem 'rolify'
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
@@ -34,6 +36,7 @@ group :test, :development do
   gem "capybara"
   gem "database_cleaner"
   gem 'factory_girl_rails'
+  gem 'launchy'
 
 end
 

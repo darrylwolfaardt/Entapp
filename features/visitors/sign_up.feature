@@ -4,16 +4,16 @@ Feature: Sign up
   so I can be registered as a user on the site
 
   Background:
-    Given I am not logged in
+    Given I am not signed in
 
   Scenario: Visitor views home page
     When I visit the home page
-    Then I should see a link "Sign up"
+    Then I should see the "Sign up" link
 
   Scenario:  Visitor decides to register
     When I visit the home page
     And I follow the "Sign up" link
-    Then I should see a form with "Sign up"
+    Then I should see "Sign up"
     And I should see a button "Sign up"
 
   Scenario: Visitor provides valid details

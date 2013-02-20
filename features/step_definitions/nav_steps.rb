@@ -1,14 +1,17 @@
 When /^I visit the home page$/ do
   visit root_path
 end
-Then /^I should see a link "([^"]*)"$/ do |link|
+Then /^I should see the "([^"]*)" link$/ do |link|
   page.should have_link (link)
 end
 When /^I follow the "([^"]*)" link$/ do |arg|
   click_link(arg)
 end
-Then /^I should see a form with "([^"]*)"$/ do |content|
+Then /^I should see "([^"]*)"$/ do |content|
   page.should have_content(content)
+end
+Then /^I should not see "([^"]*)"$/ do |content|
+  page.should_not have_content(content)
 end
 When /^I should see a button "([^"]*)"$/ do |button|
   page.should have_button(button)

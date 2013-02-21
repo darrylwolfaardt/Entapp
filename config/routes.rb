@@ -1,4 +1,7 @@
 Mova::Application.routes.draw do
+  resources :tasks
+
+
   devise_for :users, :path_prefix => 'my'
   #resources :users
   resources :users  #, :only => [:show, :index]

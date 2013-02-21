@@ -12,7 +12,8 @@
   <b>Password:</b>
   <%= @user.password_confirmation %>
 </p>
-    <p> zzz</p>
+  <%= image_tag @user.image_url(:thumb).to_s %>
+
 <% if can? :update, @user %>
     <%= link_to 'Edit Profile', edit_user_path(@user) %> |
 <% end %>

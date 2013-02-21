@@ -12,8 +12,8 @@
   <% end %>
        <p>this comes from _form</p>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
   </div>
 
     <div class="field">
@@ -31,9 +31,12 @@
       <%= f.text_field :password_confirmation %>
     </div>
 
+    <p>
+      <%= f.file_field :image %>
+    </p>
 
 
-  <div class="actions">
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
